@@ -16,7 +16,7 @@
 
 ## 🖥️ Live Demo
 
-👉 Try it here: [https://saimon-gameplay.netlify.app](https://imgtools-app.netlify.app/)
+👉 Try it here: [try imgtools-app](https://imgtools-app.netlify.app/)
 
 ## 📁 Project Structure
 
