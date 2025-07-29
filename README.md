@@ -18,6 +18,6 @@
 
 👉 Try it here: [imgtools-app](https://imgtools-app.netlify.app/)
 
-## 📁 Project Structure
+
 
 
