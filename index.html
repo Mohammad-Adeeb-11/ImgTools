@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ImgTool - Compress & Resize Images</title>
+  <title>ImgTool - Compress, Resize & Enhance Images</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,15 +13,18 @@
       <ul>
         <li><a href="#compressor">Compressor</a></li>
         <li><a href="#resizer">Resizer</a></li>
+        <li><a href="#converter">converter</a></li>
+        <li><a href="#enhancer">Enhancer</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#future-features">Features</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1 class="page-title">Image Compressor & Resizer</h1>
+  <h1 class="page-title">Image Compressor, Resizer & Enhancer</h1>
 
   <div class="container">
+    <!-- Compress Image -->
     <section id="compressor">
       <h2>🔽 Compress Image</h2>
       <input type="file" id="compressInput" accept="image/*"><br>
@@ -31,6 +34,7 @@
       <a id="compressDownloadBtn" class="download-link" style="display:none;" download="compressed.jpg">Download Compressed Image</a>
     </section>
 
+    <!-- Resize Image -->
     <section id="resizer">
       <h2>📐 Resize Image</h2>
       <input type="file" id="resizeInput" accept="image/*"><br>
@@ -40,24 +44,105 @@
       <canvas id="resizeCanvas"></canvas>
       <a id="resizeDownloadBtn" class="download-link" style="display:none;" download="resized.jpg">Download Resized Image</a>
     </section>
+
+    <!-- Add this inside your <div class="container">, below the Resizer section -->
+    <section id="converter">
+      <h2>🔁 Convert Image Format</h2>
+      <input type="file" id="convertInput" accept="image/*"><br>
+      <label>Output Format:
+        <select id="formatSelect">
+          <option value="image/jpeg">JPG</option>
+          <option value="image/png">PNG</option>
+          <option value="image/webp">WEBP</option>
+          <option value="image/gif">GIF</option>
+        </select>
+      </label>
+      <button onclick="convertImage()">Convert</button>
+      <canvas id="convertCanvas"></canvas>
+      <a id="convertDownloadBtn" class="download-link" style="display:none;" download="converted">Download Converted Image</a>
+    </section>
+
+
+    <!-- Image Enhancer -->
+    <section id="enhancer">
+      <h2>✨ Image Enhancer</h2>
+      <input type="file" id="enhanceInput" accept="image/*"><br>
+      <label>Brightness: <input type="range" id="brightness" min="0" max="200" value="100"></label>
+      <label>Contrast: <input type="range" id="contrast" min="0" max="200" value="100"></label>
+      <label>Saturation: <input type="range" id="saturation" min="0" max="200" value="100"></label>
+      <label>Sharpness: <input type="range" id="sharpness" min="0" max="10" value="0"></label>
+      <label>Filter:
+        <select id="filter">
+          <option value="none">None</option>
+          <option value="grayscale(100%)">Grayscale</option>
+          <option value="sepia(100%)">Sepia</option>
+          <option value="invert(100%)">Invert</option>
+          <option value="blur(2px)">Blur</option>
+        </select>
+      </label>
+      <button onclick="enhanceImage()">Enhance</button>
+      <canvas id="enhanceCanvas"></canvas>
+      <a id="enhanceDownloadBtn" class="download-link" style="display:none;" download="enhanced.jpg">Download Enhanced Image</a>
+    </section>
+
+    <section id="passport-maker">
+      <h2>🪪 Passport Size Photo Maker</h2>
+      <input type="file" id="passportInput" accept="image/*"><br>
+      <button onclick="generatePassportPhoto()">Generate Passport Photo</button>
+      <canvas id="passportCanvas"></canvas>
+      <a id="passportDownloadBtn" class="download-link" style="display:none;" download="passport-photo.jpg">Download Passport Photo</a>
+      <p>Default size: 35x45 mm (413x531 px)</p>
+    </section>
+
   </div>
 
   <section id="about">
-    <h2>About ImgTool</h2>
-    <p><strong>ImgTool</strong> is a free and easy-to-use online image utility that helps you quickly compress and resize your images without compromising on quality. Whether you're optimizing images for websites, social media, or presentations, ImgTool provides a seamless experience right in your browser.<br><br>This tool is perfect for students, developers, content creators, and anyone who wants to optimize images on the go.</p>
-  </section>
+  <h2>About ImgTool</h2>
+  <p>
+    &nbsp;&nbsp;&nbsp;<strong>ImgTool</strong> is a free, all-in-one online image utility designed to help you effortlessly optimize your images. Whether you want to compress, resize, enhance, or create passport-size photos, ImgTool makes it fast and easy — all directly in your browser.
+  </p>
+  <br>
+  <p>
+   &nbsp;&nbsp;&nbsp; With a focus on simplicity, speed, and privacy, your images never leave your device. ImgTool is perfect for students, developers, content creators, or anyone looking to prepare images for social media, documents, or websites without compromising quality.
+  </p>
+  <br>
+  <p>
+    &nbsp;&nbsp;&nbsp;Our goal is to make image editing accessible and effective for everyone, providing modern tools with a smooth, responsive interface that works on any device.
+  </p>
+</section>
+
 
   <section id="future-features">
-    <h2>🚀 Upcoming Features</h2>
+    <h2>Upcoming Features</h2>
+    <p>We are constantly improving our tool. Here are some exciting features coming soon:</p>
     <ul>
-      <li>✨ <strong>Image Enhancer</strong> – Automatically improve brightness, contrast, and sharpness</li>
-      <li>🪪 <strong>Passport Size Photo Maker</strong> – Resize and crop images to perfect passport photo dimensions</li>
-      <li>🔁 <strong>Image Format Converter</strong> – Convert between JPG, PNG, WebP, and more</li>
+      <li>
+        <strong>Merge PDF files:</strong> Combine multiple PDF documents into a single file seamlessly.
+      </li>
+      <li>
+        <strong>Convert Word to PDF:</strong> Easily convert your Word documents into PDF format while preserving formatting.
+      </li>
+      <li>
+        <strong>Convert PDF to Word:</strong> Turn PDF files back into editable Word documents quickly.
+      </li>
+      <li>
+        <strong>Convert Excel to PDF:</strong> Export your Excel sheets as PDF files for easy sharing and printing.
+      </li>
+      <li>
+        <strong>Convert Images to PDF:</strong> Turn images into PDF documents in just a few clicks.
+      </li>
+      <li>
+        <strong>Add Watermarks to PDF:</strong> Protect your documents by adding text or image watermarks.
+      </li>
+      <li>
+        <strong>Edit PDF documents:</strong> Modify text, images, and pages directly within your PDF files.
+      </li>
     </ul>
   </section>
 
+
   <footer>
-    © 2025 ImgTool. All rights reserved.
+    © 2025 ImgTool. All rights reserved.&nbsp;&nbsp;Made By : <strong>Mohammad Adeeb</strong>
   </footer>
 
   <script src="script.js"></script>
